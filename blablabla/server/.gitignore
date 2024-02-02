@@ -1,0 +1,5 @@
+# Remove all this content from Git repo
+/node_modules
+/build
+# Environment file will be created from .env.template
+/.env

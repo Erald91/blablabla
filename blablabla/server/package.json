@@ -1,0 +1,46 @@
+{
+  "name": "blablabla_server",
+  "version": "1.0.0",
+  "description": "Server instance on support of Bla Bla Bla application",
+  "main": "./src/index.js",
+  "scripts": {
+    "serve": "nodemon ./build",
+    "clean": "rimraf ./build/*",
+    "build": "tsc",
+    "tslint": "tslint -c tslint.json 'src/**/*.ts'",
+    "tslint:fix": "tslint --fix -c tslint.json 'src/**/*.ts'",
+    "build:watch": "tsc -w",
+    "build:clean": "npm-run-all clean build",
+    "start": "npm-run-all clean build serve",
+    "start:watch": "npm-run-all -c --parallel clean build:watch serve --print-label"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://kodek-albania.git.beanstalkapp.com/blablabla.git"
+  },
+  "author": "eraldkodek",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "moment": "^2.24.0",
+    "mongoose": "^4.13.18",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "uuid": "^3.3.2",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.2"
+  }
+}

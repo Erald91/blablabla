@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "59f56e98-67a1-476f-8a18-76569f6be130",
+		"name": "BlaBlaBla",
+		"description": "# BlaBlaBla\n\nCollections of HTTP calls to signaling server of BlaBlaBla application which will offer a simple way of creating peer-to-peer connection between users from the comfort of their browsers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Tesla\",\n\t\"email\": \"elon@tesla.com\",\n\t\"password\": \"SpaceX\"\n}"
+						},
+						"url": {
+							"raw": "{{httpProt}}://{{domain}}/{{version1}}/authentication/register",
+							"protocol": "{{httpProt}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{version1}}",
+								"authentication",
+								"register"
+							]
+						},
+						"description": "HTTP POST request\n\nContent-Type: application/json\n\nBody: {\n\t\"username\": \"Tesla\",\n\t\"email\": \"elon@tesla.com\",\n\t\"password\": \"SpaceX\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"code\": \"a0d3bfc7-019b-4a5b-bf0c-ed0f0515c429\"\n}"
+						},
+						"url": {
+							"raw": "{{httpProt}}://{{domain}}/{{version1}}/authentication/verify-account",
+							"protocol": "{{httpProt}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{version1}}",
+								"authentication",
+								"verify-account"
+							]
+						},
+						"description": "HTTP GET request\n\nContent-Type: application/json\n\nBody: {\n\tcode: <verification-token>\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Request Password Reset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"elon@tesla.com\"\n}"
+						},
+						"url": {
+							"raw": "{{httpProt}}://{{domain}}/{{version1}}/authentication/reset-password",
+							"protocol": "{{httpProt}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{version1}}",
+								"authentication",
+								"reset-password"
+							]
+						},
+						"description": "HTTP POST request\n\nContent-Type: application/json\n\nBody: {\n\temail: \"elon@tesla.com\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"code\": \"a510303c-2ac2-4ebb-9415-05ff95d2d907\",\n\t\"password\": \"blackhulk\"\n}"
+						},
+						"url": {
+							"raw": "{{httpProt}}://{{domain}}/{{version1}}/authentication/reset-password",
+							"protocol": "{{httpProt}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{version1}}",
+								"authentication",
+								"reset-password"
+							]
+						},
+						"description": "HTTP POST request\n\nContent-Type: application/json\n\nBody: {\n\tcode: \"<uuid-generated-code>\",\n\tpassword: \"newPass\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "elon@tesla.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "SpaceX",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{httpProt}}://{{domain}}/{{version1}}/authentication/login",
+							"protocol": "{{httpProt}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{version1}}",
+								"authentication",
+								"login"
+							]
+						},
+						"description": "HTTP POST request\n\nContent-Type: application/x-www-form-urlencoded\n\nbody: email=elon@tesla.com&password=secret"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ebe41682-528f-49b4-b888-cb66cc61b89c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d3c3c66b-6cd8-47f8-98d8-82ffef3e1e54",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "bb403bfa-bcdb-4734-9461-f485cff468ca",
+			"key": "httpProt",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"id": "26ee32e8-d106-48f1-9fb9-9f12f1a55510",
+			"key": "domain",
+			"value": "localhost:3001",
+			"type": "string"
+		},
+		{
+			"id": "c43ae31e-f8a2-4878-9bb1-9be8db0d5704",
+			"key": "version1",
+			"value": "v1",
+			"type": "string"
+		}
+	]
+}

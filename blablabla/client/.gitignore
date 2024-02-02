@@ -1,0 +1,3 @@
+# Ignore all libraries from node_modules
+/node_modules
+/dist
